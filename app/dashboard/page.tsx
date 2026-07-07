@@ -39,7 +39,7 @@ export default function DashboardPage() {
   useEffect(() => {
     getCurrentProfile().then(async p => {
       if (!p || p.role !== 'admin') {
-        router.push('/dashboard/login')
+        router.push('/dashboard/admin/login')
         return
       }
       setProfile(p)

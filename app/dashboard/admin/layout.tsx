@@ -50,7 +50,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     setMounted(true)
     getCurrentProfile().then(p => {
       if (!p || p.role !== 'admin') {
-        router.push('/dashboard/login')
+        router.push('/dashboard/admin/login')
       }
     })
   }, [router])

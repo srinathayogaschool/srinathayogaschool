@@ -20,7 +20,7 @@ const publicPaths = [
   '/app/signup',
   '/app/forgot-password',
   '/app/reset-password',
-  '/dashboard/login',
+  '/dashboard/admin/login',
   '/api',
   '/_next',
   '/images',
@@ -68,7 +68,7 @@ export async function middleware(request: NextRequest) {
 
   // Protect /dashboard
   if (pathname.startsWith('/dashboard') && !session) {
-    return NextResponse.redirect(new URL('/dashboard/login', request.url))
+    return NextResponse.redirect(new URL('/dashboard/admin/login', request.url))
   }
 
   return response
