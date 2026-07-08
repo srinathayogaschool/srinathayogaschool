@@ -42,6 +42,14 @@ const publicPaths = [
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
+  const host = request.headers.get('host') || ''
+
+  // Redirect non-www to www (canonical domain)
+  if (host === 'srinathayogaschool.com') {
+    const wwwUrl = new URL(request.url)
+    wwwUrl.host = 'www.srinathayogaschool.com'
+    return NextResponse.redirect(wwwUrl, 301)
+  }
 
   const isPublic = publicPaths.some(
     (p) => pathname === p || pathname.startsWith(p + '/')

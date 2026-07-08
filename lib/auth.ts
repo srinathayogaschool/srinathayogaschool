@@ -9,9 +9,9 @@ function getRedirectBase(): string {
   if (typeof window !== 'undefined') {
     const origin = window.location.origin
     const isLocal = origin.includes('localhost') || origin.includes('127.0.0.1')
-    return isLocal ? origin : (process.env.NEXT_PUBLIC_APP_URL || origin)
+    return isLocal ? origin : (process.env.NEXT_PUBLIC_SITE_URL || origin)
   }
-  return process.env.NEXT_PUBLIC_APP_URL || ''
+  return process.env.NEXT_PUBLIC_SITE_URL || ''
 }
 
 export async function signUpWithEmail(email: string, password: string, name: string) {
