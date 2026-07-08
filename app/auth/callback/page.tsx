@@ -15,6 +15,14 @@ export default function AuthCallback() {
   useEffect(() => {
     const supabase = createBrowserClient()
 
+    // Immediately check for existing session (from hash fragment)
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session) {
+        router.push(next)
+      }
+    })
+
+    // Also listen for auth state changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
       if (event === 'SIGNED_IN' && session) {
         router.push(next)
