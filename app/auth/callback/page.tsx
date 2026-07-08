@@ -3,6 +3,9 @@
 import { useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { createBrowserClient } from '@/lib/supabase'
+import { unstable_noStore } from 'next/cache'
+
+unstable_noStore()
 
 export default function AuthCallback() {
   const router = useRouter()
