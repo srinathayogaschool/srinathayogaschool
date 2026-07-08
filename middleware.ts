@@ -21,14 +21,22 @@ const publicPaths = [
   '/app/forgot-password',
   '/app/reset-password',
   '/dashboard/admin/login',
+  '/dashboard/admin/forgot-password',
+  '/dashboard/admin/reset-password',
   '/api',
   '/_next',
   '/images',
   '/favicon.ico',
-  '/robots.txt',
-  '/sitemap.xml',
+  '/favicon.png',
+  '/apple-icon.png',
+  '/icon.svg',
+  '/icon-dark-32x32.png',
+  '/icon-light-32x32.png',
+  '/manifest.webmanifest',
   '/manifest.json',
   '/sw.js',
+  '/robots.txt',
+  '/sitemap.xml',
   '/icons',
 ]
 
@@ -54,6 +62,9 @@ export async function middleware(request: NextRequest) {
           response.cookies.set(name, value, options)
         )
       },
+    },
+    cookieOptions: {
+      name: 'sb-session',
     },
   })
 

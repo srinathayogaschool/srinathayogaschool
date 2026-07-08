@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createServerSupabaseClient } from '@/lib/supabase-server'
+import { createServerClient } from '@supabase/ssr'
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)
@@ -11,8 +11,33 @@ export async function GET(request: NextRequest) {
 
   console.log('[Auth Callback] code:', !!code, 'next:', next, 'baseUrl:', baseUrl, 'isLocal:', isLocal)
 
+  // Create redirect response FIRST so cookies can be set on it
+  const redirectUrl = code 
+    ? `${baseUrl}${next}` 
+    : `${baseUrl}${next.startsWith('/dashboard') ? '/dashboard/admin/login?error=auth_callback_error' : '/app/login?error=auth_callback_error'}`
+  
+  const response = NextResponse.redirect(redirectUrl)
+
   if (code) {
-    const supabase = createServerSupabaseClient()
+    const supabase = createServerClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      {
+        cookies: {
+          getAll() {
+            return request.cookies.getAll()
+          },
+          setAll(cookiesToSet) {
+            cookiesToSet.forEach(({ name, value, options }) =>
+              response.cookies.set(name, value, options)
+            )
+          },
+        },
+        cookieOptions: {
+          name: 'sb-session',
+        },
+      }
+    )
 
     const { error } = await supabase.auth.exchangeCodeForSession(code)
     if (!error) {
@@ -27,22 +52,18 @@ export async function GET(request: NextRequest) {
             .single()
           if (profile?.role !== 'admin') {
             console.log('[Auth Callback] User is not admin, redirecting to login')
-            return NextResponse.redirect(`${baseUrl}/dashboard/admin/login?error=not_admin`)
+            const adminLoginRedirect = NextResponse.redirect(`${baseUrl}/dashboard/admin/login?error=not_admin`)
+            return adminLoginRedirect
           }
         }
       }
 
-      console.log('[Auth Callback] Success, redirecting to:', `${baseUrl}${next}`)
-      return NextResponse.redirect(`${baseUrl}${next}`)
+      console.log('[Auth Callback] Success, redirecting to:', redirectUrl)
+      return response
     }
     console.log('[Auth Callback] Exchange error:', error?.message)
   }
 
-  // On failure, redirect based on intended destination
-  const failureRedirect = next.startsWith('/dashboard') 
-    ? '/dashboard/admin/login?error=auth_callback_error'
-    : '/app/login?error=auth_callback_error'
-  
   console.log('[Auth Callback] Failed, redirecting to login')
-  return NextResponse.redirect(`${baseUrl}${failureRedirect}`)
+  return response
 }

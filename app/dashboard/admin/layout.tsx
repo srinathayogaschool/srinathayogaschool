@@ -8,12 +8,14 @@ import {
   ShoppingBag, Image, Users, PhoneCall,
   Megaphone, BarChart3, Download, FileText,
   LogOut, Menu, X, ChevronRight, Bell, Home,
+  Settings, User,
 } from 'lucide-react'
 import { signOut, getCurrentProfile } from '@/lib/auth'
 
 const MODULES = [
   { group: 'Overview', items: [
     { href: '/dashboard', label: 'Dashboard', icon: Home, token: '--admin-dashboard' },
+    { href: '/dashboard/admin/profile', label: 'Profile', icon: User, token: '--admin-profile' },
   ]},
   { group: 'Content', items: [
     { href: '/dashboard/admin/products', label: 'Products', icon: Package, token: '--admin-products' },

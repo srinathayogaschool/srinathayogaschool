@@ -1,0 +1,8 @@
+[
+  {"key":"NEXT_PUBLIC_SUPABASE_URL","value":"https://drugsksmjtikipxknlwz.supabase.co","type":"encrypted","target":["production","preview","development"]},
+  {"key":"NEXT_PUBLIC_SUPABASE_ANON_KEY","value":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRydWdza3NtanRpa2lweGtubHd6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI3OTczMzAsImV4cCI6MjA5ODM3MzMzMH0._YvOof50FMsh4JfODMBpLebzDxwWCRI297Ckj0JdG4M","type":"encrypted","target":["production","preview","development"]},
+  {"key":"SUPABASE_SERVICE_ROLE_KEY","value":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRydWdza3NtanRpa2lweGtubHd6Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4Mjc5NzMzMCwiZXhwIjoyMDk4MzczMzMwfQ.SEBRfBa1aw8SqnV6neATQhOtviVfaYmb2VxTnmgWcCk","type":"encrypted","target":["production","preview","development"]},
+  {"key":"NEXT_PUBLIC_GA_ID","value":"G-8R3FM1XZ3X","type":"encrypted","target":["production","preview","development"]},
+  {"key":"RESEND_API_KEY","value":"re_4WCDKBr8_QJr8j7TDYw2Ed194beNN5v4N","type":"encrypted","target":["production","preview","development"]},
+  {"key":"NEXT_PUBLIC_APP_URL","value":"https://www.srinathayogaschool.com","type":"encrypted","target":["production","preview","development"]}
+]

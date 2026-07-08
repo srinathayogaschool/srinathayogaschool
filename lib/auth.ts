@@ -104,7 +104,7 @@ export async function getCurrentProfile(): Promise<Profile | null> {
 
 export async function resetPassword(email: string) {
   const { error } = await sb().auth.resetPasswordForEmail(email, {
-    redirectTo: `${getRedirectBase()}/auth/callback?next=/dashboard/reset-password`,
+    redirectTo: `${getRedirectBase()}/auth/callback?next=/dashboard/admin/reset-password`,
   })
   if (error) throw error
 }

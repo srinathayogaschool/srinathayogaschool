@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
+import Link from 'next/link'
 import { createBrowserClient } from '@/lib/supabase'
 import { signInWithOtp } from '@/lib/auth'
 
@@ -94,6 +95,9 @@ export default function AdminLoginPage() {
                 required
                 className="w-full px-4 py-3 bg-background border border-input rounded-xl text-foreground focus:outline-none focus:border-primary"
               />
+            </div>
+            <div className="flex justify-end">
+              <Link href="/dashboard/admin/forgot-password" className="text-sm text-primary hover:underline">Forgot password?</Link>
             </div>
             <button
               type="submit"
