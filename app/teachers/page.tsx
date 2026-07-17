@@ -98,7 +98,7 @@ const coreValues = [
     number: "5",
     title: "Under Promising, But Over Delivering",
     description:
-      "We strive to over deliver in everything we do. Whether we create a design, shoot a video, create a workshop or organise an event, it is done in the highest possible quality, and we strive to do more than what is expected. We never do 'kaam chalau' work.\n\nWe use the best quality equipment. There are never any grammatical errors in our writing. There are no ordinary workshops we create. Satvic Movement is known for always going over and above and no one compromises it.",
+      "We strive to over deliver in everything we do. Whether we create a design, shoot a video, create a workshop or organise an event, it is done in the highest possible quality, and we strive to do more than what is expected. We never do 'kaam chalau' work.\n\nWe use the best quality equipment. There are never any grammatical errors in our writing. There are no ordinary workshops we create. Srinatha Movement is known for always going over and above and no one compromises it.",
     image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop",
     imageLeft: true,
   },
@@ -114,7 +114,7 @@ const coreValues = [
     number: "7",
     title: "A Spirit Of Joy",
     description:
-      "Satvic Movement is a happy place where joy is constant. Whatever we do, we have fun while doing it. In our courses, we add fun elements so the overall vibe is youthful and joyful, and there are no dull moments (kirtans, team dances, quizzes, surprises, gifts, etc). We like to celebrate small achievements. We like to mark milestones. We love celebrating life!",
+      "Srinatha Movement is a happy place where joy is constant. Whatever we do, we have fun while doing it. In our courses, we add fun elements so the overall vibe is youthful and joyful, and there are no dull moments (kirtans, team dances, quizzes, surprises, gifts, etc). We like to celebrate small achievements. We like to mark milestones. We love celebrating life!",
     image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop",
     imageLeft: true,
   },
@@ -137,7 +137,7 @@ export default function TeachersPage() {
             <p className="text-[#264020]/70 max-w-2xl mx-auto text-lg leading-relaxed">
               The Srinatha team consists of 40 passionate individuals spread across India.
               Though we work mostly remotely, we&apos;re closely connected by the shared purpose
-              of creating a Satvic World.
+              of creating a Srinatha World.
             </p>
           </div>
         </section>
@@ -235,7 +235,7 @@ export default function TeachersPage() {
           <div className="max-w-4xl mx-auto px-4 text-center">
             <h2 className="font-serif text-3xl lg:text-4xl text-white mb-4">Join Our Team</h2>
             <p className="text-white/80 mb-8 max-w-xl mx-auto">
-              If you want to help others on this Satvic Journey, reach out to us.
+              If you want to help others on this Srinatha Journey, reach out to us.
               Even if we don&apos;t have an open role for you, we&apos;d love to hear about you.
             </p>
             <a href="mailto:info@srinathayoga.com">

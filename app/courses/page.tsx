@@ -113,11 +113,11 @@ export default function CoursesPage() {
               <Image src="/images/logo.png" alt="Logo" width={48} height={48} />
             </div>
             
-            <h1 className="font-serif text-4xl lg:text-5xl text-[#264020] mb-4">Satvic Yoga</h1>
+            <h1 className="font-serif text-4xl lg:text-5xl text-[#264020] mb-4">Srinatha Yoga</h1>
             <p className="text-[#264020]/60 mb-6">The Yoga Wing of Srinatha Movement</p>
             
             <p className="text-[#264020]/70 max-w-3xl mx-auto text-lg leading-relaxed mb-8">
-              At Satvic Yoga, we bring ancient yogic wisdom into your modern lifestyle. 
+              At Srinatha Yoga, we bring ancient yogic wisdom into your modern lifestyle. 
               Apart from sharing Yogic Philosophy, we focus on four essential practices: 
               asanas, breath-work, chanting, and dhyana which we call the ABCD of Yoga.
             </p>
@@ -310,7 +310,7 @@ export default function CoursesPage() {
         <section className="py-16 bg-[#FAF8F5]">
           <div className="max-w-7xl mx-auto px-4 text-center">
             <p className="text-[#264020] font-serif text-2xl mb-2">रं</p>
-            <h2 className="font-serif text-2xl text-[#264020] mb-4">Satvic Yoga On Instagram</h2>
+            <h2 className="font-serif text-2xl text-[#264020] mb-4">Srinatha Yoga On Instagram</h2>
             <p className="text-[#264020]/60 mb-6">For daily yogic wisdom and inspiration</p>
             <a href="https://www.instagram.com/yogawithsrinatha/" target="_blank" rel="noopener noreferrer">
               <Button className="bg-[#264020] hover:bg-[#3a5a30] text-white">
